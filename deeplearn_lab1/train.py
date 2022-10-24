@@ -77,6 +77,8 @@ steps = list()
 
 for epoch in range(epoch_num):
     loss=None
+    loss_epoch = 0
+    cnt=0
     for batch_x,batch_y in dataloader:
         net.train()
         #print('flag_')
@@ -86,11 +88,14 @@ for epoch in range(epoch_num):
         optim.zero_grad()
         loss.backward()
         optim.step()
+        loss_epoch += loss.item()
+        cnt += 1
+    loss_epoch /= cnt
     # 每100次 的时候打印一次日志
     if (epoch+1)%10==0:
         print("step: {0} , loss: {1}".format(epoch+1,loss.item()))
         steps.append(epoch+1)
-        train_losses.append(loss.item())
+        train_losses.append(loss_epoch)
 
         net.eval()
         with torch.no_grad():
