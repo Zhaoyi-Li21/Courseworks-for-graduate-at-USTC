@@ -19,6 +19,7 @@ args = parser.parse_args()
 
 train_size = 4000
 x=np.linspace(0,4*np.pi,train_size)
+print(x[1])
 y=np.sin(x)+np.exp(-x)
 
 X=np.expand_dims(x,axis=1)
@@ -31,16 +32,19 @@ class Net(nn.Module):
     def __init__(self):
         super(Net, self).__init__()
         self.inp_layer = nn.Linear(1, args.width)
-        self.hiddens = list()
+        self.hiddens = nn.ModuleList()
+        '''
+        to make parameter in the net.parameters()
+        '''
         for i in range(args.depth-1):
             self.hiddens.append(nn.Linear(args.width, args.width).cuda())
         self.out_layer = nn.Linear(args.width, 1)
         if args.actfunc == 'relu':
             self.activate = F.relu
         elif args.actfunc == 'tanh':
-            self.activate = F.tanh
+            self.activate = torch.tanh
         elif args.actfunc == 'sigmoid':
-            self.activate = F.sigmoid
+            self.activate = torch.sigmoid
         else:
             raise Exception("ERROR: parameter `actfunc` is invalid!")
 
@@ -55,8 +59,8 @@ class Net(nn.Module):
 
 
 net=Net().cuda()
+print(net)
 
-# 定义优化器和损失函数
 optim=torch.optim.Adam(net.parameters(), lr=args.lr)
 Loss=nn.MSELoss()
 
@@ -64,6 +68,7 @@ Loss=nn.MSELoss()
 
 val_size = 500
 x_val=np.linspace(0,4*np.pi,val_size)
+print(x_val[1])
 y_val=np.sin(x_val)+np.exp(-x_val)
 
 X_val=np.expand_dims(x_val,axis=1)
@@ -91,7 +96,7 @@ for epoch in range(epoch_num):
         loss_epoch += loss.item()
         cnt += 1
     loss_epoch /= cnt
-    # 每100次 的时候打印一次日志
+   
     if (epoch+1)%10==0:
         print("step: {0} , loss: {1}".format(epoch+1,loss.item()))
         steps.append(epoch+1)
@@ -122,6 +127,7 @@ test phase
 '''
 test_size = 128
 x_test=np.linspace(0,4*np.pi,test_size)
+print(x_test[1])
 y_test=np.sin(x_test)+np.exp(-x_test)
 X_test=np.expand_dims(x_test,axis=1)
 Y_test=y_test.reshape(test_size,-1)
