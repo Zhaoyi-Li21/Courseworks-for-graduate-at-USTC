@@ -17,17 +17,48 @@ parser.add_argument('-depth',default='2',type=int, help='depth of the hidden lay
 parser.add_argument('-width',default='20', type=int, help="num of hidden unit in each hidden layer.")
 args = parser.parse_args()
 
-train_size = 4000
-x=np.linspace(0,4*np.pi,train_size)
+data_size = 5000
+x=np.linspace(0,4*np.pi,data_size)
 print(x[1])
 y=np.sin(x)+np.exp(-x)
 
 X=np.expand_dims(x,axis=1)
-Y=y.reshape(train_size,-1)
+Y=y.reshape(data_size,-1)
 
 dataset=TensorDataset(torch.tensor(X,dtype=torch.float).cuda(),torch.tensor(Y,dtype=torch.float).cuda())
-dataloader=DataLoader(dataset,batch_size=64,shuffle=True)
+train_ratio = 0.7
+dev_ratio = 0.15
+test_ratio = 0.15
+train_size = int(train_ratio*data_size)
+dev_size = int(dev_ratio*data_size)
+test_size = data_size - train_size - dev_size
+length_split = [train_size, dev_size, test_size]
+train_set, dev_set, test_set = torch.utils.data.dataset.random_split(dataset, length_split)
+print(train_set[1])
+print(len(train_set))
+dataloader=DataLoader(train_set,batch_size=64,shuffle=True)
 
+def trans_dataset2tensor(dataset):
+    '''
+    input: torch.dataset; output: corresponding tensor
+    '''
+    if len(dataset) == 0:
+        raise Exception("Blank dataset!!!")
+    for i in range(len(dataset)):
+        x, y = dataset[i]
+        if i == 0:
+            dest_x = x
+            dest_y = y
+        else:
+            dest_x = torch.cat((dest_x,x),0)
+            dest_y = torch.cat((dest_y,y),0)
+    # dest_x.shape = [len], dest_y.shape = [len]
+    dest_x = dest_x.unsqueeze(1)
+    dest_y = dest_y.unsqueeze(1)
+    return dest_x, dest_y
+x_val, y_val = trans_dataset2tensor(dev_set)
+x_test, y_test = trans_dataset2tensor(test_set)
+        
 class Net(nn.Module):
     def __init__(self):
         super(Net, self).__init__()
@@ -64,17 +95,6 @@ print(net)
 optim=torch.optim.Adam(net.parameters(), lr=args.lr)
 Loss=nn.MSELoss()
 
-
-
-val_size = 500
-x_val=np.linspace(0,4*np.pi,val_size)
-print(x_val[1])
-y_val=np.sin(x_val)+np.exp(-x_val)
-
-X_val=np.expand_dims(x_val,axis=1)
-Y_val=y_val.reshape(val_size,-1)
-
-
 epoch_num = 500
 train_losses = list()
 val_losses = list()
@@ -104,8 +124,8 @@ for epoch in range(epoch_num):
 
         net.eval()
         with torch.no_grad():
-            y_val_pred = net(torch.tensor(X_val,dtype=torch.float).cuda())
-            val_loss = Loss(torch.tensor(Y_val,dtype=torch.float).cuda(), 
+            y_val_pred = net(x_val)
+            val_loss = Loss(y_val, 
                             y_val_pred)
             print(val_loss.item())
             val_losses.append(val_loss.item())
@@ -125,21 +145,22 @@ plt.savefig('results/'+figname)
 '''
 test phase
 '''
-test_size = 128
-x_test=np.linspace(0,4*np.pi,test_size)
-print(x_test[1])
-y_test=np.sin(x_test)+np.exp(-x_test)
-X_test=np.expand_dims(x_test,axis=1)
-Y_test=y_test.reshape(test_size,-1)
-y_test_pred=net(torch.tensor(X_test,dtype=torch.float).cuda())
-test_loss = Loss(torch.tensor(Y_test,dtype=torch.float).cuda(), 
-                            y_test_pred).item()
+y_test_pred=net(x_test)
+test_loss = Loss(y_test,y_test_pred).item()
 print('lr:',args.lr)
 print('activation function type:', args.actfunc)
 print('depth:',args.depth)
 print('width:',args.width)
 print('test_loss:',test_loss)
 
+fw = open("results/collect.txt","a+")
+
+fw.write('lr:'+str(args.lr)+' activation function type:'+args.actfunc)
+fw.write('\n')
+fw.write('depth:'+str(args.depth)+' width:'+str(args.width))
+fw.write('\n')
+fw.write('test_loss:'+str(test_loss))
+fw.write('\n'+'--------------'+'\n')
 
 
 
