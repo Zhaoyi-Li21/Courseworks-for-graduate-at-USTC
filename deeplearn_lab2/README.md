@@ -13,6 +13,7 @@ to install the proper versions of torchtext according to your pytorch version.
 
 #### unzip the dataset
 ```
+mkdir dataset
 cd dataset
 #download the dataset package in this directory from the following link:
 https://ai.stanford.edu/~amaas/data/sentiment/
@@ -22,14 +23,14 @@ mkdir procd
 #### preprocess the dataset
 ```
 cd ../src
-# follow the `preprocess.ipynb` to generate processed .csv file
+# follow the `preprocess.ipynb` step-by-step to generate processed .csv file
 # generate `train/dev/test.csv` file
 ```
 
 #### train the Model with the preprocessed dataset
 ```
 # follow the `sent_cls.ipynb` step-by-step
-# you can change the hyperparameterd
+# you can change the hyperparameters with your own customized settings;
 TEXT.build_vocab(train, vectors="glove.6B.100d", max_size=10000, min_freq=10)
 # you can also download the glove-word2vec-file with the following link:
 https://link.zhihu.com/?target=https%3A//apache-mxnet.s3.cn-north-1.amazonaws.com.cn/gluon/embeddings/glove/glove.6B.zip
@@ -42,7 +43,7 @@ https://link.zhihu.com/?target=https%3A//apache-mxnet.s3.cn-north-1.amazonaws.co
 We search hyperparameters (bidirectional, layer_num, batch_size, hidden_dim)
 in the following SearchSpace:
 {True, False} $\times$ {1, 2} $\times$ {16, 64} $\times$ {128, 256}
-(16 group experiments in total)
+(16 groups of experiment in total)
 ```
 @1:bidirectional = True, layer_num = 2
 hyper-parameter setting	testing performance(accuracy)
