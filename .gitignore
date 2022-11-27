@@ -1,2 +1,3 @@
 # .gitignore
 deeplearn_lab2/dataset/
+deeplearn_lab2/.vector_cache/
