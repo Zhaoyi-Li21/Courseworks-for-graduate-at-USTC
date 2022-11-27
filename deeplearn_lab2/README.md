@@ -37,3 +37,41 @@ https://link.zhihu.com/?target=https%3A//apache-mxnet.s3.cn-north-1.amazonaws.co
 # after training for 25 epochs, testing acc -> 90%
 # you can directly enter the sent_cls.ipynb to see the detailed training infos.
 ```
+
+#### experiment results (hyperparameters)
+We search hyperparameters (bidirectional, layer_num, batch_size, hidden_dim)
+in the following SearchSpace:
+{True, False} $\times$ {1, 2} $\times$ {16, 64} $\times$ {128, 256}
+(16 group experiments in total)
+```
+@1:bidirectional = True, layer_num = 2
+hyper-parameter setting	testing performance(accuracy)
+batch_size=16,hidden_dim=256	89.95%
+batch_size=16,hidden_dim=128	90.29%
+batch_size=64,hidden_dim=256	89.60%
+batch_size=64,hidden_dim=128	90.41%
+```
+```
+@2:bidirectional = True, layer_num = 1
+hyper-parameter setting	testing performance(accuracy)
+batch_size=16,hidden_dim=256	91.55%
+batch_size=16,hidden_dim=128	91.63%
+batch_size=64,hidden_dim=256	91.78%
+batch_size=64,hidden_dim=128	91.75%
+```
+```
+@3:bidirectional = False, layer_num = 2
+hyper-parameter setting	testing performance(accuracy)
+batch_size=16,hidden_dim=256	90.14%
+batch_size=16,hidden_dim=128	89.44%
+batch_size=64,hidden_dim=256	90.28%
+batch_size=64,hidden_dim=128	89.97%
+```
+```
+@4:bidirectional = False, layer_num = 1
+hyper-parameter setting	testing performance(accuracy)
+batch_size=16,hidden_dim=256	91.69%
+batch_size=16,hidden_dim=128	91.53%
+batch_size=64,hidden_dim=256	91.64%
+batch_size=64,hidden_dim=128	91.43%
+```
