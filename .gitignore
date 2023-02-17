@@ -1,3 +1,7 @@
 # .gitignore
-deeplearn_lab2/dataset/
-deeplearn_lab2/.vector_cache/
+deeplearn_lab1_mlp/results
+deeplearn_lab2_rnn_sentcls/dataset/
+deeplearn_lab2_rnn_sentcls/.vector_cache/
+deeplearn_lab4_gcn/datasets/
+deeplearn_lab4_gcn/pygcn-master/
+deeplearn_lab4_gcn/pygcn-master.zip
