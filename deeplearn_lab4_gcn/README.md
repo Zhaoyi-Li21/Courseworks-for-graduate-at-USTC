@@ -1,4 +1,36 @@
+#### Download and Preprocess datasets
+Cora dataset :  
+Citeseer dataset :
+PPI dataset :
+#### Package dependency (environments)
+
+#### Introduction to main tunable hyper-parameters
+--dataset : "cora", "citeseer" and "ppi"
+--task : "nodecls" (Node Classification) and "linkpred" (Link Prediction)
+--layer_num : 2, 3, 4, 5 ,... (how many gcn layers to be used to construct model)
+--pair_norm : True, False (whether to use pair norm or not)
+--drop_edge : True, False (whether to use DropEdge method when training)
+--self_loop : True, False (whether to add self loop to ADJ matrix)
+--activate : "relu", "sigmoid" and "tanh"
+--hidden : 16, 64, 256 (dimension of hidden vector in GCN)
+#### Experiment Results
+
+#### Example commands (to quickly reproduce experiments on different datasets with different hyperparameters): 
+
+CUDA_VISIBLE_DEVICES=1 python train.py --dataset citeseer  --self_loop True --epochs 300 --layer_num 4 --pair_norm True --activate sigmoid
+
+CUDA_VISIBLE_DEVICES=1 python train.py --dataset citeseer  --self_loop True --epochs 300 --layer_num 4 --pair_norm True --activate sigmoid
+
+CUDA_VISIBLE_DEVICES=1 python train.py --dataset citeseer  --self_loop True --epochs 300 --layer_num 2 --pair_norm True --activate relu --task linkpred
+
+CUDA_VISIBLE_DEVICES=1 python train.py --dataset citeseer  --self_loop True --epochs 300 --layer_num 2 --activate relu --task linkpred
+
+CUDA_VISIBLE_DEVICES=1 python train.py --dataset ppi  --self_loop True --epochs 300 --layer_num 2 --activate relu --task nodecls
+
+CUDA_VISIBLE_DEVICES=1 python train.py --dataset ppi  --self_loop True --epochs 300 --layer_num 4 --pair_norm True --activate relu --task linkpred --hidden 256
+
 #### References
+my implementation is on the basis of https://github.com/tkipf/pygcn
 ```
 @1: Mu Li's tutorial:
 https://www.bilibili.com/video/BV1iT4y1d7zP/?spm_id_from=333.337.search-card.all.click&vd_source=0b94491685a644f4e70b2ffc09079337
@@ -19,10 +51,6 @@ https://blog.csdn.net/Cyril_KI/article/details/125956540
 @10: an example of processing PPI dataset:
 https://blog.csdn.net/KPer_Yang/article/details/128810698?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0-128810698-blog-112979175.pc_relevant_multi_platform_whitelistv3&spm=1001.2101.3001.4242.1&utm_relevant_index=3
 ```
-CUDA_VISIBLE_DEVICES=1 python train.py --dataset citeseer  --self_loop True --epochs 300 --layer_num 4 --pair_norm True --activate sigmoid
 
-CUDA_VISIBLE_DEVICES=1 python train.py --dataset citeseer  --self_loop True --epochs 300 --layer_num 4 --pair_norm True --activate sigmoid
 
-CUDA_VISIBLE_DEVICES=1 python train.py --dataset citeseer  --self_loop True --epochs 300 --layer_num 2 --pair_norm True --activate relu --task linkpred
 
-CUDA_VISIBLE_DEVICES=1 python train.py --dataset citeseer  --self_loop True --epochs 300 --layer_num 2 --activate relu --task linkpred
