@@ -141,7 +141,7 @@ optimizer = optim.Adam(model.parameters(),
 
 if args.task == 'nodecls':
     if args.dataset != 'ppi':
-        criterion = F.nll_loss()
+        criterion = F.nll_loss
     else:
         criterion = torch.nn.BCEWithLogitsLoss()
 elif args.task == 'linkpred':
@@ -158,12 +158,13 @@ def train(epoch, task='nodecls'):
     if task == 'nodecls':
         if args.dataset != 'ppi':
             output = model(features, adj)
+            loss_train = criterion(output[idx_train], labels[idx_train])
         else:
             output = model(x=features, adj=adj, ppi=True)
-        loss_train = criterion(output[idx_train], labels[idx_train].float())
+            loss_train = criterion(output[idx_train], labels[idx_train].float())
 
         if args.dataset != 'ppi':
-            acc_train = accuracy(output[idx_train], labels[idx_train], 'nodecls')
+            acc_train = accuracy(output[idx_train], labels[idx_train])
         else:
             preds = (output[idx_train] > 0).float().cpu()
             #print(labels[idx_train].shape, preds.shape)
@@ -183,10 +184,11 @@ def train(epoch, task='nodecls'):
     if task == 'nodecls':
         if args.dataset != 'ppi':
             output = model(features, adj)
+            loss_val = criterion(output[idx_val], labels[idx_val])
         else:
             output = model(x=features, adj=adj, ppi=True)
+            loss_val = criterion(output[idx_val], labels[idx_val].float())
 
-        loss_val = criterion(output[idx_val], labels[idx_val].float())
         if args.dataset != 'ppi':
             acc_val = accuracy(output[idx_val], labels[idx_val])
         else:
@@ -194,10 +196,12 @@ def train(epoch, task='nodecls'):
             f1_val = f1_score(labels[idx_val].cpu(), preds, average='micro')
 
 
-        loss_test = criterion(output[idx_test], labels[idx_test].float())
+        
         if args.dataset != 'ppi':
+            loss_test = criterion(output[idx_test], labels[idx_test])
             acc_test = accuracy(output[idx_test], labels[idx_test])
         else:
+            loss_test = criterion(output[idx_test], labels[idx_test].float())
             preds = (output[idx_test] > 0).float().cpu()
             f1_test = f1_score(labels[idx_test].cpu(), preds, average='micro')
 
