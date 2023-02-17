@@ -2,6 +2,7 @@ import numpy as np
 import scipy.sparse as sp
 import torch
 from torch_geometric.utils import negative_sampling
+import json
 
 def encode_onehot(labels):
     classes = set(labels)
@@ -187,3 +188,156 @@ def sparse_mx_to_torch_sparse_tensor(sparse_mx):
     values = torch.from_numpy(sparse_mx.data)
     shape = torch.Size(sparse_mx.shape)
     return torch.sparse.FloatTensor(indices, values, shape)
+
+
+def load_ppi_data(task='nodecls', self_loop=True):
+    path = "../datasets/ppi/"
+    print('Loading PPI dataset...')
+    feature_file = path + "ppi-feats.npy"
+    label_file = path + "ppi-class_map.json"
+    edge_file = path + "ppi-walks.txt"
+    graph_file = path + "ppi-G.json"
+
+    print('Uploading features ...')
+    features = np.load(feature_file) # shape = (56944, 50)
+    features = sp.csr_matrix(features, dtype=np.float32)
+    print('Uploading labels...')
+    fr_label = open(label_file, "r")
+    label_dict = json.load(fr_label)
+    proc_label_dict = dict()
+    for key in label_dict:
+        proc_label_dict[int(key)] = list(label_dict[key])
+    _labels = sorted(proc_label_dict.items(), key=lambda d: d[0])
+    labels = list()
+    for item in _labels:
+        _, x = item
+        labels.append(x)
+    labels = np.array(labels, dtype=np.int32)
+    print('Uploading graph...')
+    fr_graph = open(graph_file, "r")
+    graph_dict = json.load(fr_graph)
+    nodes = graph_dict["nodes"]
+    links = graph_dict["links"]
+    print('Generating edges')
+    edges = [[links[i]["source"], links[i]["target"]] for i in range(len(links))]
+    edges = np.array(edges, dtype=np.int32)
+    print('Generating nodes')
+    idx = list()
+    idx_train = list()
+    idx_val = list()
+    idx_test = list()
+    for i in range(len(nodes)):
+        idx.append(nodes[i]["id"])
+        if nodes[i]["test"] == True:
+            idx_test.append(nodes[i]["id"])
+        elif nodes[i]["val"] == True:
+            idx_val.append(nodes[i]["id"])
+        else:
+            idx_train.append(nodes[i]["id"])
+    idx = np.array(idx, dtype=np.int32)
+
+    print('You are currently running {} task on PPI dataset...'.format(task))
+    if task == 'linkpred':
+        edge_num = edges.shape[0]
+        shuffled_ids = np.random.permutation(edge_num)
+        test_set_size = int(edge_num * 0.15)
+        val_set_size = int(edge_num * 0.15)
+        test_ids = shuffled_ids[ : test_set_size]
+        val_ids = shuffled_ids[test_set_size : test_set_size + val_set_size]
+        train_ids = shuffled_ids[test_set_size + val_set_size : ]
+
+        train_pos_edges = torch.tensor(edges[train_ids], dtype=int)
+        val_pos_edges = torch.tensor(edges[val_ids], dtype=int)
+        test_pos_edges = torch.tensor(edges[test_ids], dtype=int)
+
+        train_pos_edges = torch.transpose(train_pos_edges, 1, 0)
+        # shape = [2, train_pos_edge_num]
+        val_pos_edges = torch.transpose(val_pos_edges, 1, 0)
+        test_pos_edges = torch.transpose(test_pos_edges, 1, 0)
+
+        def negative_sample(pos_edges, nodes_num):
+            '''
+            pos_edges = [[src_1,...],
+                        [dst_1,...]]
+            '''
+            neg_edges = negative_sampling(
+                edge_index=pos_edges,
+                num_nodes=nodes_num,
+                num_neg_samples=pos_edges.shape[1],
+                method='sparse'
+            )
+            edges = torch.cat((pos_edges, neg_edges), dim=-1)
+            '''
+            edges = [[src_1,src_2,...,src_m],
+                    [dst_1,dst_2,...,dst_m]]
+            shape = [2, 2*train_edge_num]
+            '''
+            edges_label = torch.cat((
+                torch.ones(pos_edges.shape[1]),
+                torch.zeros(neg_edges.shape[1])
+            ),dim=0)
+            # size = [2*train_edge_num]
+            return edges, edges_label
+        
+        train_edges, train_label = negative_sample(train_pos_edges, idx.shape[0])
+        val_edges, val_label = negative_sample(val_pos_edges, idx.shape[0])
+        test_edges, test_label = negative_sample(test_pos_edges, idx.shape[0])
+        
+        adj = sp.coo_matrix((np.ones(train_pos_edges.shape[1]), (train_pos_edges[0], train_pos_edges[1])),
+                        shape=(idx.shape[0], idx.shape[0]),
+                        dtype=np.float32)
+
+        # build symmetric adjacency matrix
+        adj = adj + adj.T.multiply(adj.T > adj) - adj.multiply(adj.T > adj)
+
+        features = normalize(features)
+    
+        if self_loop == True:
+            adj = normalize(adj + sp.eye(adj.shape[0]))
+        else:
+            adj = normalize(adj)
+
+        features = torch.FloatTensor(np.array(features.todense()))
+        adj = sparse_mx_to_torch_sparse_tensor(adj)
+
+        train_edges = train_edges.tolist()
+        val_edges = val_edges.tolist()
+        test_edges = test_edges.tolist()
+        train_label = train_label.type(torch.float)
+        val_label = val_label.type(torch.float)
+        test_label = test_label.type(torch.float)
+
+        return adj, features, train_edges, val_edges, test_edges, \
+                    train_label, val_label, test_label
+
+    elif task == 'nodecls':
+        adj = sp.coo_matrix((np.ones(edges.shape[0]), (edges[:, 0], edges[:, 1])),
+                        shape=(labels.shape[0], labels.shape[0]),
+                        dtype=np.float32)
+
+        # build symmetric adjacency matrix
+        adj = adj + adj.T.multiply(adj.T > adj) - adj.multiply(adj.T > adj)
+
+        features = normalize(features)
+    
+        if self_loop == True:
+            adj = normalize(adj + sp.eye(adj.shape[0]))
+        else:
+            adj = normalize(adj)
+        
+        
+        features = torch.FloatTensor(np.array(features.todense()))
+        labels = torch.LongTensor(labels)
+        adj = sparse_mx_to_torch_sparse_tensor(adj)
+
+        idx_train = torch.LongTensor(idx_train)
+        idx_val = torch.LongTensor(idx_val)
+        idx_test = torch.LongTensor(idx_test)
+
+        return adj, features, labels, idx_train, idx_val, idx_test
+    
+    else:
+        raise Exception("hyper-parameter `task` belongs to \{'nodecls', 'linkpred'\}.")
+
+
+

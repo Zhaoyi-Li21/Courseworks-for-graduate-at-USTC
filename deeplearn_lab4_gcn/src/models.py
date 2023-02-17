@@ -25,8 +25,11 @@ class GCN(nn.Module):
         
 
         self.dropout = nn.Dropout(dropout)
+        
+        # for ppi dataset
+        self.linear_out = nn.Linear(out_channels, 121)
 
-    def forward(self, x, adj, task='nodecls', edges=None):
+    def forward(self, x, adj, task='nodecls', edges=None, ppi=False):
         x = self.gc_inp(x, adj)
         x = self.activate(x)
 
@@ -43,8 +46,13 @@ class GCN(nn.Module):
         x = self.gc_out(x, adj)
 
         if task == 'nodecls':
-            # x.shape = [node_num, label_class_num]
-            return F.log_softmax(x, dim=1)
+            if ppi == False:
+                # x.shape = [node_num, label_class_num]
+                return F.log_softmax(x, dim=1)
+            else:
+                x = self.linear_out(x)
+                # x.shape = [node_num, label_dim]
+                return x
         elif task == 'linkpred':
             # x.shape = [node_num, hid_channels]
             assert edges != None

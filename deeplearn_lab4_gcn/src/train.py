@@ -8,9 +8,9 @@ import numpy as np
 import torch
 import torch.nn.functional as F
 import torch.optim as optim
-from sklearn.metrics import roc_auc_score
+from sklearn.metrics import roc_auc_score, f1_score
 
-from utils import load_data, accuracy
+from utils import load_data, accuracy, load_ppi_data
 from models import GCN
 
 # Training settings
@@ -45,7 +45,7 @@ parser.add_argument('--activate', type=str, default='relu',
                     help='Which kind of activation function is going to be used')
 parser.add_argument('--dataset', type=str, default='citeseer',
                     help='Select which dataset to conduct experiment')
-parser.add_argument('--task', type=str, default='linkpred',
+parser.add_argument('--task', type=str, default='nodecls',
                     help='nodecls(Node classification) or linkpred(Link Prediction)')
 
 
@@ -60,19 +60,35 @@ if args.cuda:
 
 # Load data
 if args.task == 'nodecls':
-    adj, features, labels, idx_train, idx_val, idx_test = load_data(
-                                                        dataset=args.dataset, 
-                                                        task=args.task,
-                                                        self_loop=args.self_loop)
-    # Model and optimizer
-    model = GCN(in_channels=features.shape[1],
-                hid_channels=args.hidden,
-                out_channels=labels.max().item() + 1,
-                dropout=args.dropout,
-                layer_num=args.layer_num,
-                activation=args.activate,
-                drop_edge=args.drop_edge,
-                pair_norm=args.pair_norm)
+    if args.dataset == 'cora' or args.dataset == 'citeseer':
+        adj, features, labels, idx_train, idx_val, idx_test = load_data(
+                                                            dataset=args.dataset, 
+                                                            task=args.task,
+                                                         self_loop=args.self_loop)
+        # Model and optimizer
+        model = GCN(in_channels=features.shape[1],
+                    hid_channels=args.hidden,
+                    out_channels=labels.max().item() + 1,
+                    dropout=args.dropout,
+                    layer_num=args.layer_num,
+                    activation=args.activate,
+                    drop_edge=args.drop_edge,
+                    pair_norm=args.pair_norm)
+        
+    elif args.dataset == 'ppi':
+        adj, features, labels, idx_train, idx_val, idx_test = load_ppi_data(
+                                                            task=args.task,
+                                                            self_loop=args.self_loop)
+        # Model and optimizer
+        model = GCN(in_channels=features.shape[1],
+                    hid_channels=args.hidden,
+                    out_channels=args.hidden,
+                    dropout=args.dropout,
+                    layer_num=args.layer_num,
+                    activation=args.activate,
+                    drop_edge=args.drop_edge,
+                    pair_norm=args.pair_norm)
+
     if args.cuda:
         model.cuda()
         features = features.cuda()
@@ -83,11 +99,17 @@ if args.task == 'nodecls':
         idx_test = idx_test.cuda()
     
 elif args.task == 'linkpred':
-    adj, features, train_edges, val_edges, test_edges, \
-                    train_label, val_label, test_label = load_data(
-                                                        dataset=args.dataset, 
-                                                        task=args.task,
-                                                        self_loop=args.self_loop) 
+    if args.dataset == 'cora' or args.dataset == 'citeseer':
+        adj, features, train_edges, val_edges, test_edges, \
+                        train_label, val_label, test_label = load_data(
+                                                            dataset=args.dataset, 
+                                                            task=args.task,
+                                                            self_loop=args.self_loop) 
+    elif args.dataset == 'ppi':
+        adj, features, train_edges, val_edges, test_edges, \
+                        train_label, val_label, test_label = load_ppi_data(
+                                                            task=args.task,
+                                                            self_loop=args.self_loop) 
     '''
     train_edges = list [[src_pos_1,...,src_pos_m, src_neg_1,...,src_neg_m],
                         [dst_pos_1,...,dst_pos_m, dst_neg_1,...,dst_neg_m]]
@@ -118,7 +140,10 @@ optimizer = optim.Adam(model.parameters(),
                        lr=args.lr, weight_decay=args.weight_decay)
 
 if args.task == 'nodecls':
-    criterion = F.nll_loss()
+    if args.dataset != 'ppi':
+        criterion = F.nll_loss()
+    else:
+        criterion = torch.nn.BCEWithLogitsLoss()
 elif args.task == 'linkpred':
     criterion = torch.nn.BCEWithLogitsLoss()
 
@@ -131,9 +156,19 @@ def train(epoch, task='nodecls'):
     optimizer.zero_grad()
     
     if task == 'nodecls':
-        output = model(features, adj)
-        loss_train = criterion(output[idx_train], labels[idx_train])
-        acc_train = accuracy(output[idx_train], labels[idx_train], 'nodecls')
+        if args.dataset != 'ppi':
+            output = model(features, adj)
+        else:
+            output = model(x=features, adj=adj, ppi=True)
+        loss_train = criterion(output[idx_train], labels[idx_train].float())
+
+        if args.dataset != 'ppi':
+            acc_train = accuracy(output[idx_train], labels[idx_train], 'nodecls')
+        else:
+            preds = (output[idx_train] > 0).float().cpu()
+            #print(labels[idx_train].shape, preds.shape)
+            f1_train = f1_score(labels[idx_train].cpu(), preds, average='micro')
+
     elif task == 'linkpred':
         output = model(features, adj, 'linkpred', train_edges)
         loss_train = criterion(output, train_label)
@@ -146,24 +181,48 @@ def train(epoch, task='nodecls'):
     
     model.eval()
     if task == 'nodecls':
-        output = model(features, adj)
-        loss_val = criterion(output[idx_val], labels[idx_val])
-        acc_val = accuracy(output[idx_val], labels[idx_val])
+        if args.dataset != 'ppi':
+            output = model(features, adj)
+        else:
+            output = model(x=features, adj=adj, ppi=True)
 
-        output = model(features, adj)
-        loss_test = criterion(output[idx_test], labels[idx_test])
-        acc_test = accuracy(output[idx_test], labels[idx_test])
+        loss_val = criterion(output[idx_val], labels[idx_val].float())
+        if args.dataset != 'ppi':
+            acc_val = accuracy(output[idx_val], labels[idx_val])
+        else:
+            preds = (output[idx_val] > 0).float().cpu()
+            f1_val = f1_score(labels[idx_val].cpu(), preds, average='micro')
 
-        print('Epoch: {:04d}'.format(epoch+1),
-            'loss_train: {:.4f}'.format(loss_train.item()),
-            'acc_train: {:.4f}'.format(acc_train.item()),
-            'loss_val: {:.4f}'.format(loss_val.item()),
-            'acc_val: {:.4f}'.format(acc_val.item()),
-            'loss_val: {:.4f}'.format(loss_test.item()),
-            'acc_val: {:.4f}'.format(acc_test.item()),
-            'time: {:.4f}s'.format(time.time() - t))
-        val_performances.append(acc_val.item())
-        test_performances.append(acc_test.item())
+
+        loss_test = criterion(output[idx_test], labels[idx_test].float())
+        if args.dataset != 'ppi':
+            acc_test = accuracy(output[idx_test], labels[idx_test])
+        else:
+            preds = (output[idx_test] > 0).float().cpu()
+            f1_test = f1_score(labels[idx_test].cpu(), preds, average='micro')
+
+        if args.dataset != 'ppi':
+            print('Epoch: {:04d}'.format(epoch+1),
+                'loss_train: {:.4f}'.format(loss_train.item()),
+                'acc_train: {:.4f}'.format(acc_train.item()),
+                'loss_val: {:.4f}'.format(loss_val.item()),
+                'acc_val: {:.4f}'.format(acc_val.item()),
+                'loss_val: {:.4f}'.format(loss_test.item()),
+                'acc_val: {:.4f}'.format(acc_test.item()),
+                'time: {:.4f}s'.format(time.time() - t))
+            val_performances.append(acc_val.item())
+            test_performances.append(acc_test.item())
+        else:
+            print('Epoch: {:04d}'.format(epoch+1),
+                'loss_train: {:.4f}'.format(loss_train.item()),
+                'f1_train: {:.4f}'.format(f1_train),
+                'loss_val: {:.4f}'.format(loss_val.item()),
+                'f1_val: {:.4f}'.format(f1_val),
+                'loss_val: {:.4f}'.format(loss_test.item()),
+                'f1_test: {:.4f}'.format(f1_test),
+                'time: {:.4f}s'.format(time.time() - t))
+            val_performances.append(f1_val.item())
+            test_performances.append(f1_test.item())
 
     elif task == 'linkpred':
         output = model(features, adj, 'linkpred', val_edges)
@@ -217,8 +276,12 @@ def output_best(val_performances, test_performances, task='nodecls'):
         print("Test set results (with best validation performance):",
             "auc score= {:.4f}".format(test_performances[max_id]))
     else:
-        print("Test set results (with best validation performance):",
-            "acc = {:.4f}".format(test_performances[max_id]))
+        if args.dataset != 'ppi':
+            print("Test set results (with best validation performance):",
+                "acc = {:.4f}".format(test_performances[max_id]))
+        else:
+            print("Test set results (with best validation performance):",
+                "f1_score = {:.4f}".format(test_performances[max_id]))
 
 
 
