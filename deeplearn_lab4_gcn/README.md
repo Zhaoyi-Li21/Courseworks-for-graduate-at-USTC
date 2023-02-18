@@ -47,15 +47,20 @@ reference : https://blog.csdn.net/weixin_47196352/article/details/115795660?spm=
 --self_loop : True, False (whether to add self loop to ADJ matrix)
 --activate : "relu", "sigmoid" and "tanh"
 --hidden : 16, 64, 256 (dimension of hidden vector in GCN)
-#### Experiment Results
-Overall best results on Cora, Citeseer and PPI datasets and corresponding hyper-parameters are listed as follows:
-![avatar](overall-results.png)
+
 #### Example uses (to quickly reproduce experiments on different datasets with different hyperparameters): 
 to run a single experiment:\\
 `CUDA_VISIBLE_DEVICES=1 python train.py --dataset ppi  --self_loop True --epochs 300 --layer_num 4 --pair_norm True --activate relu --task linkpred --hidden 256` \\
 to quickly reproduce our results with one click:\\
 `bash run_one_click_ppi.sh > result.ppi.txt` \\
 `bash run_one_click_cora_cite.sh > result.cora.citeseer.txt`
+
+#### Experiment Results
+Overall best results on Cora, Citeseer and PPI datasets and corresponding hyper-parameters are listed as follows:
+![avatar](overall-results.png)
+#### Experiment Results
+Analysis of the impact of different hyper-parameters:
+![avatar](impact-params.png)
 
 #### References
 my implementation is on the basis of https://github.com/tkipf/pygcn
