@@ -13,9 +13,9 @@ support for the following parameters:
 --hidden : 16, 64, 256 (dimension of hidden vector in GCN)
 ```
 #### Download and Preprocess datasets
-Cora dataset : https://linqs-data.soe.ucsc.edu/public/lbc/cora.tgz \\
-Citeseer dataset :  https://linqs-data.soe.ucsc.edu/public/lbc/citeseer.tgz\\
-PPI dataset :  http://snap.stanford.edu/graphsage/ppi.zip \\
+Cora dataset : https://linqs-data.soe.ucsc.edu/public/lbc/cora.tgz 
+Citeseer dataset :  https://linqs-data.soe.ucsc.edu/public/lbc/citeseer.tgz
+PPI dataset :  http://snap.stanford.edu/graphsage/ppi.zip 
 ```
 mkdir datasets
 # download 3 datasets into datasets dictionary
@@ -48,7 +48,8 @@ reference : https://blog.csdn.net/weixin_47196352/article/details/115795660?spm=
 --activate : "relu", "sigmoid" and "tanh"
 --hidden : 16, 64, 256 (dimension of hidden vector in GCN)
 #### Experiment Results
-
+Overall best results on Cora, Citeseer and PPI datasets and corresponding hyper-parameters are listed as follows:
+![avatar](overall-results.png)
 #### Example uses (to quickly reproduce experiments on different datasets with different hyperparameters): 
 to run a single experiment:\\
 `CUDA_VISIBLE_DEVICES=1 python train.py --dataset ppi  --self_loop True --epochs 300 --layer_num 4 --pair_norm True --activate relu --task linkpred --hidden 256` \\
