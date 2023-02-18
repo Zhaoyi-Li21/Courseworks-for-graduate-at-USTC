@@ -1,0 +1,360 @@
+True
+128
+cora  ---  linkpred  ---  True  ---  2  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.7241
+-----------------------------------------
+True
+128
+cora  ---  linkpred  ---  True  ---  2  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.5652
+-----------------------------------------
+True
+128
+cora  ---  linkpred  ---  True  ---  2  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.6596
+-----------------------------------------
+True
+128
+cora  ---  linkpred  ---  True  ---  2  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.7264
+-----------------------------------------
+True
+128
+cora  ---  linkpred  ---  True  ---  2  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.5768
+-----------------------------------------
+True
+128
+cora  ---  linkpred  ---  True  ---  2  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.7544
+-----------------------------------------
+True
+128
+cora  ---  linkpred  ---  True  ---  3  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.7360
+-----------------------------------------
+True
+128
+cora  ---  linkpred  ---  True  ---  3  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.7124
+-----------------------------------------
+True
+128
+cora  ---  linkpred  ---  True  ---  3  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.8010
+-----------------------------------------
+True
+128
+cora  ---  linkpred  ---  True  ---  3  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.7708
+-----------------------------------------
+True
+128
+cora  ---  linkpred  ---  True  ---  3  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.7285
+-----------------------------------------
+True
+128
+cora  ---  linkpred  ---  True  ---  3  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.8023
+-----------------------------------------
+True
+128
+cora  ---  linkpred  ---  True  ---  4  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.7433
+-----------------------------------------
+True
+128
+cora  ---  linkpred  ---  True  ---  4  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.7483
+-----------------------------------------
+True
+128
+cora  ---  linkpred  ---  True  ---  4  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.7925
+-----------------------------------------
+True
+128
+cora  ---  linkpred  ---  True  ---  4  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.7662
+-----------------------------------------
+True
+128
+cora  ---  linkpred  ---  True  ---  4  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.7503
+-----------------------------------------
+True
+128
+cora  ---  linkpred  ---  True  ---  4  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.7648
+-----------------------------------------
+True
+128
+cora  ---  linkpred  ---  True  ---  2  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.7380
+-----------------------------------------
+True
+128
+cora  ---  linkpred  ---  True  ---  2  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.5502
+-----------------------------------------
+True
+128
+cora  ---  linkpred  ---  True  ---  2  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.7014
+-----------------------------------------
+True
+128
+cora  ---  linkpred  ---  True  ---  2  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.7116
+-----------------------------------------
+True
+128
+cora  ---  linkpred  ---  True  ---  2  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.5547
+-----------------------------------------
+True
+128
+cora  ---  linkpred  ---  True  ---  2  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.6721
+-----------------------------------------
+True
+128
+cora  ---  linkpred  ---  True  ---  3  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.7526
+-----------------------------------------
+True
+128
+cora  ---  linkpred  ---  True  ---  3  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.7283
+-----------------------------------------
+True
+128
+cora  ---  linkpred  ---  True  ---  3  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.7935
+-----------------------------------------
+True
+128
+cora  ---  linkpred  ---  True  ---  3  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.7643
+-----------------------------------------
+True
+128
+cora  ---  linkpred  ---  True  ---  3  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.7260
+-----------------------------------------
+True
+128
+cora  ---  linkpred  ---  True  ---  3  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.7943
+-----------------------------------------
+True
+128
+cora  ---  linkpred  ---  True  ---  4  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.7606
+-----------------------------------------
+True
+128
+cora  ---  linkpred  ---  True  ---  4  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.7582
+-----------------------------------------
+True
+128
+cora  ---  linkpred  ---  True  ---  4  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.7769
+-----------------------------------------
+True
+128
+cora  ---  linkpred  ---  True  ---  4  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.7694
+-----------------------------------------
+True
+128
+cora  ---  linkpred  ---  True  ---  4  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.7558
+-----------------------------------------
+True
+128
+cora  ---  linkpred  ---  True  ---  4  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.8039
+-----------------------------------------
+True
+128
+cora  ---  nodecls  ---  True  ---  2  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.7980
+-----------------------------------------
+True
+128
+cora  ---  nodecls  ---  True  ---  2  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.3180
+-----------------------------------------
+True
+128
+cora  ---  nodecls  ---  True  ---  2  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.8020
+-----------------------------------------
+True
+128
+cora  ---  nodecls  ---  True  ---  2  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.8070
+-----------------------------------------
+True
+128
+cora  ---  nodecls  ---  True  ---  2  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.3180
+-----------------------------------------
+True
+128
+cora  ---  nodecls  ---  True  ---  2  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.8030
+-----------------------------------------
+True
+128
+cora  ---  nodecls  ---  True  ---  3  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.6360
+-----------------------------------------
+True
+128
+cora  ---  nodecls  ---  True  ---  3  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.4610
+-----------------------------------------
+True
+128
+cora  ---  nodecls  ---  True  ---  3  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.6990
+-----------------------------------------
+True
+128
+cora  ---  nodecls  ---  True  ---  3  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.6060
+-----------------------------------------
+True
+128
+cora  ---  nodecls  ---  True  ---  3  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.3200
+-----------------------------------------
+True
+128
+cora  ---  nodecls  ---  True  ---  3  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.7040
+-----------------------------------------
+True
+128
+cora  ---  nodecls  ---  True  ---  4  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.6820
+-----------------------------------------
+True
+128
+cora  ---  nodecls  ---  True  ---  4  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.3150
+-----------------------------------------
+True
+128
+cora  ---  nodecls  ---  True  ---  4  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.7160
+-----------------------------------------
+True
+128
+cora  ---  nodecls  ---  True  ---  4  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.5750
+-----------------------------------------
+True
+128
+cora  ---  nodecls  ---  True  ---  4  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.3170
+-----------------------------------------
+True
+128
+cora  ---  nodecls  ---  True  ---  4  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.7160
+-----------------------------------------
+True
+128
+cora  ---  nodecls  ---  True  ---  2  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.8060
+-----------------------------------------
+True
+128
+cora  ---  nodecls  ---  True  ---  2  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.3180
+-----------------------------------------
+True
+128
+cora  ---  nodecls  ---  True  ---  2  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.8040
+-----------------------------------------
+True
+128
+cora  ---  nodecls  ---  True  ---  2  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.7950
+-----------------------------------------
+True
+128
+cora  ---  nodecls  ---  True  ---  2  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.3180
+-----------------------------------------
+True
+128
+cora  ---  nodecls  ---  True  ---  2  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.8070
+-----------------------------------------
+True
+128
+cora  ---  nodecls  ---  True  ---  3  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.5840
+-----------------------------------------
+True
+128
+cora  ---  nodecls  ---  True  ---  3  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.3480
+-----------------------------------------
+True
+128
+cora  ---  nodecls  ---  True  ---  3  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.6760
+-----------------------------------------
+True
+128
+cora  ---  nodecls  ---  True  ---  3  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.6370
+-----------------------------------------
+True
+128
+cora  ---  nodecls  ---  True  ---  3  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.3150
+-----------------------------------------
+True
+128
+cora  ---  nodecls  ---  True  ---  3  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.7100
+-----------------------------------------
+True
+128
+cora  ---  nodecls  ---  True  ---  4  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.6160
+-----------------------------------------
+True
+128
+cora  ---  nodecls  ---  True  ---  4  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.3300
+-----------------------------------------
+True
+128
+cora  ---  nodecls  ---  True  ---  4  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.6990
+-----------------------------------------
+True
+128
+cora  ---  nodecls  ---  True  ---  4  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.6200
+-----------------------------------------
+True
+128
+cora  ---  nodecls  ---  True  ---  4  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.3380
+-----------------------------------------
+True
+128
+cora  ---  nodecls  ---  True  ---  4  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.7060
+-----------------------------------------

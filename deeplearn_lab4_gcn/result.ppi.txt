@@ -1,0 +1,105 @@
+True
+Uploading graph...
+dataset: ppi  --- task: linkpred  --- self_loop: True  --- layer_num: 2  --- pair_norm: True  --- activate: relu  --- hidden: 16
+Test set results (with best validation performance): f1_score = 0.7006
+-----------------------------------------
+True
+Uploading graph...
+dataset: ppi  --- task: linkpred  --- self_loop: True  --- layer_num: 2  --- pair_norm: True  --- activate: relu  --- hidden: 256
+Test set results (with best validation performance): f1_score = 0.7059
+-----------------------------------------
+True
+Uploading graph...
+dataset: ppi  --- task: linkpred  --- self_loop: True  --- layer_num: 2  --- pair_norm: True  --- activate: relu  --- hidden: 16
+Test set results (with best validation performance): f1_score = 0.7006
+-----------------------------------------
+True
+Uploading graph...
+dataset: ppi  --- task: linkpred  --- self_loop: True  --- layer_num: 2  --- pair_norm: True  --- activate: relu  --- hidden: 256
+Test set results (with best validation performance): f1_score = 0.7077
+-----------------------------------------
+True
+Uploading graph...
+dataset: ppi  --- task: linkpred  --- self_loop: True  --- layer_num: 3  --- pair_norm: True  --- activate: relu  --- hidden: 16
+Test set results (with best validation performance): f1_score = 0.8511
+-----------------------------------------
+True
+Uploading graph...
+dataset: ppi  --- task: linkpred  --- self_loop: True  --- layer_num: 3  --- pair_norm: True  --- activate: relu  --- hidden: 256
+Test set results (with best validation performance): f1_score = 0.8769
+-----------------------------------------
+True
+Uploading graph...
+dataset: ppi  --- task: linkpred  --- self_loop: True  --- layer_num: 3  --- pair_norm: True  --- activate: relu  --- hidden: 16
+Test set results (with best validation performance): f1_score = 0.8479
+-----------------------------------------
+True
+Uploading graph...
+dataset: ppi  --- task: linkpred  --- self_loop: True  --- layer_num: 3  --- pair_norm: True  --- activate: relu  --- hidden: 256
+Test set results (with best validation performance): f1_score = 0.8761
+-----------------------------------------
+True
+Uploading graph...
+dataset: ppi  --- task: linkpred  --- self_loop: True  --- layer_num: 4  --- pair_norm: True  --- activate: relu  --- hidden: 16
+Test set results (with best validation performance): f1_score = 0.8433
+-----------------------------------------
+True
+Uploading graph...
+dataset: ppi  --- task: linkpred  --- self_loop: True  --- layer_num: 4  --- pair_norm: True  --- activate: relu  --- hidden: 256
+Test set results (with best validation performance): f1_score = 0.9124
+-----------------------------------------
+True
+Uploading graph...
+dataset: ppi  --- task: linkpred  --- self_loop: True  --- layer_num: 4  --- pair_norm: True  --- activate: relu  --- hidden: 16
+Test set results (with best validation performance): f1_score = 0.8438
+-----------------------------------------
+True
+Uploading graph...
+dataset: ppi  --- task: linkpred  --- self_loop: True  --- layer_num: 4  --- pair_norm: True  --- activate: relu  --- hidden: 256
+Test set results (with best validation performance): f1_score = 0.9139
+-----------------------------------------
+True
+Uploading graph...
+dataset: ppi  --- task: nodecls  --- self_loop: True  --- layer_num: 2  --- pair_norm: True  --- activate: relu  --- hidden: 16
+Test set results (with best validation performance): f1_score = 0.4049
+-----------------------------------------
+True
+Uploading graph...
+dataset: ppi  --- task: nodecls  --- self_loop: True  --- layer_num: 2  --- pair_norm: True  --- activate: relu  --- hidden: 256
+Test set results (with best validation performance): f1_score = 0.4210
+-----------------------------------------
+True
+Uploading graph...
+dataset: ppi  --- task: nodecls  --- self_loop: True  --- layer_num: 2  --- pair_norm: True  --- activate: relu  --- hidden: 16
+Test set results (with best validation performance): f1_score = 0.4049
+-----------------------------------------
+True
+Uploading graph...
+dataset: ppi  --- task: nodecls  --- self_loop: True  --- layer_num: 2  --- pair_norm: True  --- activate: relu  --- hidden: 256
+Test set results (with best validation performance): f1_score = 0.4210
+-----------------------------------------
+True
+Uploading graph...
+dataset: ppi  --- task: nodecls  --- self_loop: True  --- layer_num: 3  --- pair_norm: True  --- activate: relu  --- hidden: 16
+Test set results (with best validation performance): f1_score = 0.4276
+-----------------------------------------
+True
+Uploading graph...
+dataset: ppi  --- task: nodecls  --- self_loop: True  --- layer_num: 3  --- pair_norm: True  --- activate: relu  --- hidden: 256
+Test set results (with best validation performance): f1_score = 0.4459
+-----------------------------------------
+True
+Uploading graph...
+dataset: ppi  --- task: nodecls  --- self_loop: True  --- layer_num: 3  --- pair_norm: True  --- activate: relu  --- hidden: 16
+Test set results (with best validation performance): f1_score = 0.4230
+-----------------------------------------
+True
+Uploading graph...
+dataset: ppi  --- task: nodecls  --- self_loop: True  --- layer_num: 3  --- pair_norm: True  --- activate: relu  --- hidden: 256
+Test set results (with best validation performance): f1_score = 0.4456
+-----------------------------------------
+True
+Uploading graph...
+dataset: ppi  --- task: nodecls  --- self_loop: True  --- layer_num: 4  --- pair_norm: True  --- activate: relu  --- hidden: 16
+Test set results (with best validation performance): f1_score = 0.4402
+-----------------------------------------

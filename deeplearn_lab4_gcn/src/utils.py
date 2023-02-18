@@ -16,14 +16,14 @@ def encode_onehot(labels):
 def load_data(dataset, task, self_loop):
     
     if dataset == 'cora':
-        path = "../datasets/cora/"
+        path = "/data2/home/zhaoyi/labs/USTC-labs/deeplearn_lab4_gcn/datasets/cora/"
         dataset = "cora"
     elif dataset == 'citeseer':
         #path = "../datasets/citeseer_new/"
         path = "/data2/home/zhaoyi/labs/USTC-labs/deeplearn_lab4_gcn/datasets/citeseer_new/"
         dataset = "citeseer"
     
-    print('Loading {} dataset...'.format(dataset))
+    #print('Loading {} dataset...'.format(dataset))
 
     idx_features_labels = np.genfromtxt("{}{}.content".format(path, dataset),
                                         dtype=np.dtype(str))
@@ -52,7 +52,7 @@ def load_data(dataset, task, self_loop):
     edges = np.array(list(map(idx_map.get, edges_unordered.flatten())),
                      dtype=np.int32).reshape(edges_unordered.shape)
     '''
-    print('You are currently running {} task on {} dataset...'.format(task, dataset))
+    #print('You are currently running {} task on {} dataset...'.format(task, dataset))
     if task == 'linkpred':
         edge_num = edges.shape[0]
         shuffled_ids = np.random.permutation(edge_num)
@@ -191,17 +191,17 @@ def sparse_mx_to_torch_sparse_tensor(sparse_mx):
 
 
 def load_ppi_data(task='nodecls', self_loop=True):
-    path = "../datasets/ppi/"
-    print('Loading PPI dataset...')
+    path = "/data2/home/zhaoyi/labs/USTC-labs/deeplearn_lab4_gcn/datasets/ppi/"
+    #print('Loading PPI dataset...')
     feature_file = path + "ppi-feats.npy"
     label_file = path + "ppi-class_map.json"
     edge_file = path + "ppi-walks.txt"
     graph_file = path + "ppi-G.json"
 
-    print('Uploading features ...')
+    #print('Uploading features ...')
     features = np.load(feature_file) # shape = (56944, 50)
     features = sp.csr_matrix(features, dtype=np.float32)
-    print('Uploading labels...')
+    #print('Uploading labels...')
     fr_label = open(label_file, "r")
     label_dict = json.load(fr_label)
     proc_label_dict = dict()
@@ -218,10 +218,10 @@ def load_ppi_data(task='nodecls', self_loop=True):
     graph_dict = json.load(fr_graph)
     nodes = graph_dict["nodes"]
     links = graph_dict["links"]
-    print('Generating edges')
+    #print('Generating edges')
     edges = [[links[i]["source"], links[i]["target"]] for i in range(len(links))]
     edges = np.array(edges, dtype=np.int32)
-    print('Generating nodes')
+    #print('Generating nodes')
     idx = list()
     idx_train = list()
     idx_val = list()
@@ -236,7 +236,7 @@ def load_ppi_data(task='nodecls', self_loop=True):
             idx_train.append(nodes[i]["id"])
     idx = np.array(idx, dtype=np.int32)
 
-    print('You are currently running {} task on PPI dataset...'.format(task))
+    #print('You are currently running {} task on PPI dataset...'.format(task))
     if task == 'linkpred':
         edge_num = edges.shape[0]
         shuffled_ids = np.random.permutation(edge_num)

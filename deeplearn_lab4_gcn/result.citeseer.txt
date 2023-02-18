@@ -1,0 +1,360 @@
+True
+158327
+citeseer  ---  linkpred  ---  True  ---  2  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.8057
+-----------------------------------------
+True
+158327
+citeseer  ---  linkpred  ---  True  ---  2  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.5971
+-----------------------------------------
+True
+158327
+citeseer  ---  linkpred  ---  True  ---  2  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.6211
+-----------------------------------------
+True
+158327
+citeseer  ---  linkpred  ---  True  ---  2  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.7989
+-----------------------------------------
+True
+158327
+citeseer  ---  linkpred  ---  True  ---  2  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.6133
+-----------------------------------------
+True
+158327
+citeseer  ---  linkpred  ---  True  ---  2  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.7384
+-----------------------------------------
+True
+158327
+citeseer  ---  linkpred  ---  True  ---  3  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.7346
+-----------------------------------------
+True
+158327
+citeseer  ---  linkpred  ---  True  ---  3  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.6632
+-----------------------------------------
+True
+158327
+citeseer  ---  linkpred  ---  True  ---  3  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.7612
+-----------------------------------------
+True
+158327
+citeseer  ---  linkpred  ---  True  ---  3  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.6914
+-----------------------------------------
+True
+158327
+citeseer  ---  linkpred  ---  True  ---  3  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.6673
+-----------------------------------------
+True
+158327
+citeseer  ---  linkpred  ---  True  ---  3  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.7406
+-----------------------------------------
+True
+158327
+citeseer  ---  linkpred  ---  True  ---  4  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.6950
+-----------------------------------------
+True
+158327
+citeseer  ---  linkpred  ---  True  ---  4  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.7272
+-----------------------------------------
+True
+158327
+citeseer  ---  linkpred  ---  True  ---  4  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.7131
+-----------------------------------------
+True
+158327
+citeseer  ---  linkpred  ---  True  ---  4  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.6772
+-----------------------------------------
+True
+158327
+citeseer  ---  linkpred  ---  True  ---  4  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.7436
+-----------------------------------------
+True
+158327
+citeseer  ---  linkpred  ---  True  ---  4  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.7364
+-----------------------------------------
+True
+158327
+citeseer  ---  linkpred  ---  True  ---  2  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.7764
+-----------------------------------------
+True
+158327
+citeseer  ---  linkpred  ---  True  ---  2  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.5425
+-----------------------------------------
+True
+158327
+citeseer  ---  linkpred  ---  True  ---  2  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.7141
+-----------------------------------------
+True
+158327
+citeseer  ---  linkpred  ---  True  ---  2  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.7538
+-----------------------------------------
+True
+158327
+citeseer  ---  linkpred  ---  True  ---  2  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.6049
+-----------------------------------------
+True
+158327
+citeseer  ---  linkpred  ---  True  ---  2  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.6713
+-----------------------------------------
+True
+158327
+citeseer  ---  linkpred  ---  True  ---  3  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.7387
+-----------------------------------------
+True
+158327
+citeseer  ---  linkpred  ---  True  ---  3  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.6122
+-----------------------------------------
+True
+158327
+citeseer  ---  linkpred  ---  True  ---  3  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.7494
+-----------------------------------------
+True
+158327
+citeseer  ---  linkpred  ---  True  ---  3  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.7476
+-----------------------------------------
+True
+158327
+citeseer  ---  linkpred  ---  True  ---  3  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.6896
+-----------------------------------------
+True
+158327
+citeseer  ---  linkpred  ---  True  ---  3  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.7700
+-----------------------------------------
+True
+158327
+citeseer  ---  linkpred  ---  True  ---  4  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.7037
+-----------------------------------------
+True
+158327
+citeseer  ---  linkpred  ---  True  ---  4  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.7383
+-----------------------------------------
+True
+158327
+citeseer  ---  linkpred  ---  True  ---  4  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.7945
+-----------------------------------------
+True
+158327
+citeseer  ---  linkpred  ---  True  ---  4  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.7366
+-----------------------------------------
+True
+158327
+citeseer  ---  linkpred  ---  True  ---  4  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.7591
+-----------------------------------------
+True
+158327
+citeseer  ---  linkpred  ---  True  ---  4  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.7933
+-----------------------------------------
+True
+158327
+citeseer  ---  nodecls  ---  True  ---  2  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.6470
+-----------------------------------------
+True
+158327
+citeseer  ---  nodecls  ---  True  ---  2  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.3610
+-----------------------------------------
+True
+158327
+citeseer  ---  nodecls  ---  True  ---  2  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.6420
+-----------------------------------------
+True
+158327
+citeseer  ---  nodecls  ---  True  ---  2  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.6270
+-----------------------------------------
+True
+158327
+citeseer  ---  nodecls  ---  True  ---  2  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.3550
+-----------------------------------------
+True
+158327
+citeseer  ---  nodecls  ---  True  ---  2  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.6440
+-----------------------------------------
+True
+158327
+citeseer  ---  nodecls  ---  True  ---  3  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.4890
+-----------------------------------------
+True
+158327
+citeseer  ---  nodecls  ---  True  ---  3  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.4330
+-----------------------------------------
+True
+158327
+citeseer  ---  nodecls  ---  True  ---  3  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.5550
+-----------------------------------------
+True
+158327
+citeseer  ---  nodecls  ---  True  ---  3  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.5630
+-----------------------------------------
+True
+158327
+citeseer  ---  nodecls  ---  True  ---  3  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.4190
+-----------------------------------------
+True
+158327
+citeseer  ---  nodecls  ---  True  ---  3  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.5920
+-----------------------------------------
+True
+158327
+citeseer  ---  nodecls  ---  True  ---  4  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.4600
+-----------------------------------------
+True
+158327
+citeseer  ---  nodecls  ---  True  ---  4  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.3660
+-----------------------------------------
+True
+158327
+citeseer  ---  nodecls  ---  True  ---  4  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.5090
+-----------------------------------------
+True
+158327
+citeseer  ---  nodecls  ---  True  ---  4  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.4470
+-----------------------------------------
+True
+158327
+citeseer  ---  nodecls  ---  True  ---  4  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.3530
+-----------------------------------------
+True
+158327
+citeseer  ---  nodecls  ---  True  ---  4  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.5490
+-----------------------------------------
+True
+158327
+citeseer  ---  nodecls  ---  True  ---  2  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.6430
+-----------------------------------------
+True
+158327
+citeseer  ---  nodecls  ---  True  ---  2  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.4400
+-----------------------------------------
+True
+158327
+citeseer  ---  nodecls  ---  True  ---  2  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.6400
+-----------------------------------------
+True
+158327
+citeseer  ---  nodecls  ---  True  ---  2  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.6390
+-----------------------------------------
+True
+158327
+citeseer  ---  nodecls  ---  True  ---  2  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.3680
+-----------------------------------------
+True
+158327
+citeseer  ---  nodecls  ---  True  ---  2  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.6460
+-----------------------------------------
+True
+158327
+citeseer  ---  nodecls  ---  True  ---  3  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.5080
+-----------------------------------------
+True
+158327
+citeseer  ---  nodecls  ---  True  ---  3  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.4060
+-----------------------------------------
+True
+158327
+citeseer  ---  nodecls  ---  True  ---  3  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.5210
+-----------------------------------------
+True
+158327
+citeseer  ---  nodecls  ---  True  ---  3  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.4610
+-----------------------------------------
+True
+158327
+citeseer  ---  nodecls  ---  True  ---  3  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.3770
+-----------------------------------------
+True
+158327
+citeseer  ---  nodecls  ---  True  ---  3  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.5590
+-----------------------------------------
+True
+158327
+citeseer  ---  nodecls  ---  True  ---  4  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.3800
+-----------------------------------------
+True
+158327
+citeseer  ---  nodecls  ---  True  ---  4  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.3620
+-----------------------------------------
+True
+158327
+citeseer  ---  nodecls  ---  True  ---  4  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.5320
+-----------------------------------------
+True
+158327
+citeseer  ---  nodecls  ---  True  ---  4  ---  True  ---  relu  ---  16
+Test set results (with best validation performance): acc = 0.4390
+-----------------------------------------
+True
+158327
+citeseer  ---  nodecls  ---  True  ---  4  ---  True  ---  sigmoid  ---  16
+Test set results (with best validation performance): acc = 0.3370
+-----------------------------------------
+True
+158327
+citeseer  ---  nodecls  ---  True  ---  4  ---  True  ---  tanh  ---  16
+Test set results (with best validation performance): acc = 0.5620
+-----------------------------------------

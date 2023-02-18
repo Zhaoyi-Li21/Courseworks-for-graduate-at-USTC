@@ -1,0 +1,360 @@
+True
+128
+dataset: cora  --- task: linkpred  --- self_loop: True  --- layer_num: 2  --- pair_norm: False  --- activate: relu  --- hidden: 16
+Test set results (with best validation performance): acc = 0.7200
+-----------------------------------------
+True
+128
+dataset: cora  --- task: linkpred  --- self_loop: True  --- layer_num: 2  --- pair_norm: False  --- activate: sigmoid  --- hidden: 16
+Test set results (with best validation performance): acc = 0.5350
+-----------------------------------------
+True
+128
+dataset: cora  --- task: linkpred  --- self_loop: True  --- layer_num: 2  --- pair_norm: False  --- activate: tanh  --- hidden: 16
+Test set results (with best validation performance): acc = 0.7560
+-----------------------------------------
+True
+128
+dataset: cora  --- task: linkpred  --- self_loop: True  --- layer_num: 3  --- pair_norm: False  --- activate: relu  --- hidden: 16
+Test set results (with best validation performance): acc = 0.6241
+-----------------------------------------
+True
+128
+dataset: cora  --- task: linkpred  --- self_loop: True  --- layer_num: 3  --- pair_norm: False  --- activate: sigmoid  --- hidden: 16
+Test set results (with best validation performance): acc = 0.5476
+-----------------------------------------
+True
+128
+dataset: cora  --- task: linkpred  --- self_loop: True  --- layer_num: 3  --- pair_norm: False  --- activate: tanh  --- hidden: 16
+Test set results (with best validation performance): acc = 0.5768
+-----------------------------------------
+True
+128
+dataset: cora  --- task: linkpred  --- self_loop: True  --- layer_num: 4  --- pair_norm: False  --- activate: relu  --- hidden: 16
+Test set results (with best validation performance): acc = 0.6243
+-----------------------------------------
+True
+128
+dataset: cora  --- task: linkpred  --- self_loop: True  --- layer_num: 4  --- pair_norm: False  --- activate: sigmoid  --- hidden: 16
+Test set results (with best validation performance): acc = 0.5521
+-----------------------------------------
+True
+128
+dataset: cora  --- task: linkpred  --- self_loop: True  --- layer_num: 4  --- pair_norm: False  --- activate: tanh  --- hidden: 16
+Test set results (with best validation performance): acc = 0.5399
+-----------------------------------------
+True
+128
+dataset: cora  --- task: linkpred  --- self_loop: True  --- layer_num: 2  --- pair_norm: False  --- activate: relu  --- hidden: 16
+Test set results (with best validation performance): acc = 0.7016
+-----------------------------------------
+True
+128
+dataset: cora  --- task: linkpred  --- self_loop: True  --- layer_num: 2  --- pair_norm: False  --- activate: sigmoid  --- hidden: 16
+Test set results (with best validation performance): acc = 0.5425
+-----------------------------------------
+True
+128
+dataset: cora  --- task: linkpred  --- self_loop: True  --- layer_num: 2  --- pair_norm: False  --- activate: tanh  --- hidden: 16
+Test set results (with best validation performance): acc = 0.7082
+-----------------------------------------
+True
+128
+dataset: cora  --- task: linkpred  --- self_loop: True  --- layer_num: 3  --- pair_norm: False  --- activate: relu  --- hidden: 16
+Test set results (with best validation performance): acc = 0.6855
+-----------------------------------------
+True
+128
+dataset: cora  --- task: linkpred  --- self_loop: True  --- layer_num: 3  --- pair_norm: False  --- activate: sigmoid  --- hidden: 16
+Test set results (with best validation performance): acc = 0.5437
+-----------------------------------------
+True
+128
+dataset: cora  --- task: linkpred  --- self_loop: True  --- layer_num: 3  --- pair_norm: False  --- activate: tanh  --- hidden: 16
+Test set results (with best validation performance): acc = 0.5556
+-----------------------------------------
+True
+128
+dataset: cora  --- task: linkpred  --- self_loop: True  --- layer_num: 4  --- pair_norm: False  --- activate: relu  --- hidden: 16
+Test set results (with best validation performance): acc = 0.6215
+-----------------------------------------
+True
+128
+dataset: cora  --- task: linkpred  --- self_loop: True  --- layer_num: 4  --- pair_norm: False  --- activate: sigmoid  --- hidden: 16
+Test set results (with best validation performance): acc = 0.5663
+-----------------------------------------
+True
+128
+dataset: cora  --- task: linkpred  --- self_loop: True  --- layer_num: 4  --- pair_norm: False  --- activate: tanh  --- hidden: 16
+Test set results (with best validation performance): acc = 0.5452
+-----------------------------------------
+True
+128
+dataset: cora  --- task: nodecls  --- self_loop: True  --- layer_num: 2  --- pair_norm: False  --- activate: relu  --- hidden: 16
+Test set results (with best validation performance): acc = 0.7970
+-----------------------------------------
+True
+128
+dataset: cora  --- task: nodecls  --- self_loop: True  --- layer_num: 2  --- pair_norm: False  --- activate: sigmoid  --- hidden: 16
+Test set results (with best validation performance): acc = 0.3180
+-----------------------------------------
+True
+128
+dataset: cora  --- task: nodecls  --- self_loop: True  --- layer_num: 2  --- pair_norm: False  --- activate: tanh  --- hidden: 16
+Test set results (with best validation performance): acc = 0.8040
+-----------------------------------------
+True
+128
+dataset: cora  --- task: nodecls  --- self_loop: True  --- layer_num: 3  --- pair_norm: False  --- activate: relu  --- hidden: 16
+Test set results (with best validation performance): acc = 0.7620
+-----------------------------------------
+True
+128
+dataset: cora  --- task: nodecls  --- self_loop: True  --- layer_num: 3  --- pair_norm: False  --- activate: sigmoid  --- hidden: 16
+Test set results (with best validation performance): acc = 0.3180
+-----------------------------------------
+True
+128
+dataset: cora  --- task: nodecls  --- self_loop: True  --- layer_num: 3  --- pair_norm: False  --- activate: tanh  --- hidden: 16
+Test set results (with best validation performance): acc = 0.8000
+-----------------------------------------
+True
+128
+dataset: cora  --- task: nodecls  --- self_loop: True  --- layer_num: 4  --- pair_norm: False  --- activate: relu  --- hidden: 16
+Test set results (with best validation performance): acc = 0.6910
+-----------------------------------------
+True
+128
+dataset: cora  --- task: nodecls  --- self_loop: True  --- layer_num: 4  --- pair_norm: False  --- activate: sigmoid  --- hidden: 16
+Test set results (with best validation performance): acc = 0.3180
+-----------------------------------------
+True
+128
+dataset: cora  --- task: nodecls  --- self_loop: True  --- layer_num: 4  --- pair_norm: False  --- activate: tanh  --- hidden: 16
+Test set results (with best validation performance): acc = 0.7720
+-----------------------------------------
+True
+128
+dataset: cora  --- task: nodecls  --- self_loop: True  --- layer_num: 2  --- pair_norm: False  --- activate: relu  --- hidden: 16
+Test set results (with best validation performance): acc = 0.7990
+-----------------------------------------
+True
+128
+dataset: cora  --- task: nodecls  --- self_loop: True  --- layer_num: 2  --- pair_norm: False  --- activate: sigmoid  --- hidden: 16
+Test set results (with best validation performance): acc = 0.3180
+-----------------------------------------
+True
+128
+dataset: cora  --- task: nodecls  --- self_loop: True  --- layer_num: 2  --- pair_norm: False  --- activate: tanh  --- hidden: 16
+Test set results (with best validation performance): acc = 0.8010
+-----------------------------------------
+True
+128
+dataset: cora  --- task: nodecls  --- self_loop: True  --- layer_num: 3  --- pair_norm: False  --- activate: relu  --- hidden: 16
+Test set results (with best validation performance): acc = 0.7580
+-----------------------------------------
+True
+128
+dataset: cora  --- task: nodecls  --- self_loop: True  --- layer_num: 3  --- pair_norm: False  --- activate: sigmoid  --- hidden: 16
+Test set results (with best validation performance): acc = 0.3180
+-----------------------------------------
+True
+128
+dataset: cora  --- task: nodecls  --- self_loop: True  --- layer_num: 3  --- pair_norm: False  --- activate: tanh  --- hidden: 16
+Test set results (with best validation performance): acc = 0.8010
+-----------------------------------------
+True
+128
+dataset: cora  --- task: nodecls  --- self_loop: True  --- layer_num: 4  --- pair_norm: False  --- activate: relu  --- hidden: 16
+Test set results (with best validation performance): acc = 0.7060
+-----------------------------------------
+True
+128
+dataset: cora  --- task: nodecls  --- self_loop: True  --- layer_num: 4  --- pair_norm: False  --- activate: sigmoid  --- hidden: 16
+Test set results (with best validation performance): acc = 0.3180
+-----------------------------------------
+True
+128
+dataset: cora  --- task: nodecls  --- self_loop: True  --- layer_num: 4  --- pair_norm: False  --- activate: tanh  --- hidden: 16
+Test set results (with best validation performance): acc = 0.7610
+-----------------------------------------
+True
+158327
+dataset: citeseer  --- task: linkpred  --- self_loop: True  --- layer_num: 2  --- pair_norm: False  --- activate: relu  --- hidden: 16
+Test set results (with best validation performance): acc = 0.8032
+-----------------------------------------
+True
+158327
+dataset: citeseer  --- task: linkpred  --- self_loop: True  --- layer_num: 2  --- pair_norm: False  --- activate: sigmoid  --- hidden: 16
+Test set results (with best validation performance): acc = 0.5988
+-----------------------------------------
+True
+158327
+dataset: citeseer  --- task: linkpred  --- self_loop: True  --- layer_num: 2  --- pair_norm: False  --- activate: tanh  --- hidden: 16
+Test set results (with best validation performance): acc = 0.6685
+-----------------------------------------
+True
+158327
+dataset: citeseer  --- task: linkpred  --- self_loop: True  --- layer_num: 3  --- pair_norm: False  --- activate: relu  --- hidden: 16
+Test set results (with best validation performance): acc = 0.6343
+-----------------------------------------
+True
+158327
+dataset: citeseer  --- task: linkpred  --- self_loop: True  --- layer_num: 3  --- pair_norm: False  --- activate: sigmoid  --- hidden: 16
+Test set results (with best validation performance): acc = 0.6252
+-----------------------------------------
+True
+158327
+dataset: citeseer  --- task: linkpred  --- self_loop: True  --- layer_num: 3  --- pair_norm: False  --- activate: tanh  --- hidden: 16
+Test set results (with best validation performance): acc = 0.6286
+-----------------------------------------
+True
+158327
+dataset: citeseer  --- task: linkpred  --- self_loop: True  --- layer_num: 4  --- pair_norm: False  --- activate: relu  --- hidden: 16
+Test set results (with best validation performance): acc = 0.5914
+-----------------------------------------
+True
+158327
+dataset: citeseer  --- task: linkpred  --- self_loop: True  --- layer_num: 4  --- pair_norm: False  --- activate: sigmoid  --- hidden: 16
+Test set results (with best validation performance): acc = 0.6025
+-----------------------------------------
+True
+158327
+dataset: citeseer  --- task: linkpred  --- self_loop: True  --- layer_num: 4  --- pair_norm: False  --- activate: tanh  --- hidden: 16
+Test set results (with best validation performance): acc = 0.6424
+-----------------------------------------
+True
+158327
+dataset: citeseer  --- task: linkpred  --- self_loop: True  --- layer_num: 2  --- pair_norm: False  --- activate: relu  --- hidden: 16
+Test set results (with best validation performance): acc = 0.7098
+-----------------------------------------
+True
+158327
+dataset: citeseer  --- task: linkpred  --- self_loop: True  --- layer_num: 2  --- pair_norm: False  --- activate: sigmoid  --- hidden: 16
+Test set results (with best validation performance): acc = 0.5776
+-----------------------------------------
+True
+158327
+dataset: citeseer  --- task: linkpred  --- self_loop: True  --- layer_num: 2  --- pair_norm: False  --- activate: tanh  --- hidden: 16
+Test set results (with best validation performance): acc = 0.5995
+-----------------------------------------
+True
+158327
+dataset: citeseer  --- task: linkpred  --- self_loop: True  --- layer_num: 3  --- pair_norm: False  --- activate: relu  --- hidden: 16
+Test set results (with best validation performance): acc = 0.6269
+-----------------------------------------
+True
+158327
+dataset: citeseer  --- task: linkpred  --- self_loop: True  --- layer_num: 3  --- pair_norm: False  --- activate: sigmoid  --- hidden: 16
+Test set results (with best validation performance): acc = 0.6192
+-----------------------------------------
+True
+158327
+dataset: citeseer  --- task: linkpred  --- self_loop: True  --- layer_num: 3  --- pair_norm: False  --- activate: tanh  --- hidden: 16
+Test set results (with best validation performance): acc = 0.6328
+-----------------------------------------
+True
+158327
+dataset: citeseer  --- task: linkpred  --- self_loop: True  --- layer_num: 4  --- pair_norm: False  --- activate: relu  --- hidden: 16
+Test set results (with best validation performance): acc = 0.6228
+-----------------------------------------
+True
+158327
+dataset: citeseer  --- task: linkpred  --- self_loop: True  --- layer_num: 4  --- pair_norm: False  --- activate: sigmoid  --- hidden: 16
+Test set results (with best validation performance): acc = 0.5416
+-----------------------------------------
+True
+158327
+dataset: citeseer  --- task: linkpred  --- self_loop: True  --- layer_num: 4  --- pair_norm: False  --- activate: tanh  --- hidden: 16
+Test set results (with best validation performance): acc = 0.6199
+-----------------------------------------
+True
+158327
+dataset: citeseer  --- task: nodecls  --- self_loop: True  --- layer_num: 2  --- pair_norm: False  --- activate: relu  --- hidden: 16
+Test set results (with best validation performance): acc = 0.6250
+-----------------------------------------
+True
+158327
+dataset: citeseer  --- task: nodecls  --- self_loop: True  --- layer_num: 2  --- pair_norm: False  --- activate: sigmoid  --- hidden: 16
+Test set results (with best validation performance): acc = 0.3690
+-----------------------------------------
+True
+158327
+dataset: citeseer  --- task: nodecls  --- self_loop: True  --- layer_num: 2  --- pair_norm: False  --- activate: tanh  --- hidden: 16
+Test set results (with best validation performance): acc = 0.6500
+-----------------------------------------
+True
+158327
+dataset: citeseer  --- task: nodecls  --- self_loop: True  --- layer_num: 3  --- pair_norm: False  --- activate: relu  --- hidden: 16
+Test set results (with best validation performance): acc = 0.5810
+-----------------------------------------
+True
+158327
+dataset: citeseer  --- task: nodecls  --- self_loop: True  --- layer_num: 3  --- pair_norm: False  --- activate: sigmoid  --- hidden: 16
+Test set results (with best validation performance): acc = 0.2240
+-----------------------------------------
+True
+158327
+dataset: citeseer  --- task: nodecls  --- self_loop: True  --- layer_num: 3  --- pair_norm: False  --- activate: tanh  --- hidden: 16
+Test set results (with best validation performance): acc = 0.6160
+-----------------------------------------
+True
+158327
+dataset: citeseer  --- task: nodecls  --- self_loop: True  --- layer_num: 4  --- pair_norm: False  --- activate: relu  --- hidden: 16
+Test set results (with best validation performance): acc = 0.4020
+-----------------------------------------
+True
+158327
+dataset: citeseer  --- task: nodecls  --- self_loop: True  --- layer_num: 4  --- pair_norm: False  --- activate: sigmoid  --- hidden: 16
+Test set results (with best validation performance): acc = 0.2240
+-----------------------------------------
+True
+158327
+dataset: citeseer  --- task: nodecls  --- self_loop: True  --- layer_num: 4  --- pair_norm: False  --- activate: tanh  --- hidden: 16
+Test set results (with best validation performance): acc = 0.5750
+-----------------------------------------
+True
+158327
+dataset: citeseer  --- task: nodecls  --- self_loop: True  --- layer_num: 2  --- pair_norm: False  --- activate: relu  --- hidden: 16
+Test set results (with best validation performance): acc = 0.6580
+-----------------------------------------
+True
+158327
+dataset: citeseer  --- task: nodecls  --- self_loop: True  --- layer_num: 2  --- pair_norm: False  --- activate: sigmoid  --- hidden: 16
+Test set results (with best validation performance): acc = 0.3420
+-----------------------------------------
+True
+158327
+dataset: citeseer  --- task: nodecls  --- self_loop: True  --- layer_num: 2  --- pair_norm: False  --- activate: tanh  --- hidden: 16
+Test set results (with best validation performance): acc = 0.6480
+-----------------------------------------
+True
+158327
+dataset: citeseer  --- task: nodecls  --- self_loop: True  --- layer_num: 3  --- pair_norm: False  --- activate: relu  --- hidden: 16
+Test set results (with best validation performance): acc = 0.5550
+-----------------------------------------
+True
+158327
+dataset: citeseer  --- task: nodecls  --- self_loop: True  --- layer_num: 3  --- pair_norm: False  --- activate: sigmoid  --- hidden: 16
+Test set results (with best validation performance): acc = 0.2240
+-----------------------------------------
+True
+158327
+dataset: citeseer  --- task: nodecls  --- self_loop: True  --- layer_num: 3  --- pair_norm: False  --- activate: tanh  --- hidden: 16
+Test set results (with best validation performance): acc = 0.6050
+-----------------------------------------
+True
+158327
+dataset: citeseer  --- task: nodecls  --- self_loop: True  --- layer_num: 4  --- pair_norm: False  --- activate: relu  --- hidden: 16
+Test set results (with best validation performance): acc = 0.5000
+-----------------------------------------
+True
+158327
+dataset: citeseer  --- task: nodecls  --- self_loop: True  --- layer_num: 4  --- pair_norm: False  --- activate: sigmoid  --- hidden: 16
+Test set results (with best validation performance): acc = 0.2240
+-----------------------------------------
+True
+158327
+dataset: citeseer  --- task: nodecls  --- self_loop: True  --- layer_num: 4  --- pair_norm: False  --- activate: tanh  --- hidden: 16
+Test set results (with best validation performance): acc = 0.5370
+-----------------------------------------

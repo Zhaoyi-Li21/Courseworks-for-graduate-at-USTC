@@ -206,6 +206,7 @@ def train(epoch, task='nodecls'):
             f1_test = f1_score(labels[idx_test].cpu(), preds, average='micro')
 
         if args.dataset != 'ppi':
+            '''
             print('Epoch: {:04d}'.format(epoch+1),
                 'loss_train: {:.4f}'.format(loss_train.item()),
                 'acc_train: {:.4f}'.format(acc_train.item()),
@@ -214,9 +215,11 @@ def train(epoch, task='nodecls'):
                 'loss_val: {:.4f}'.format(loss_test.item()),
                 'acc_val: {:.4f}'.format(acc_test.item()),
                 'time: {:.4f}s'.format(time.time() - t))
+            '''
             val_performances.append(acc_val.item())
             test_performances.append(acc_test.item())
         else:
+            '''
             print('Epoch: {:04d}'.format(epoch+1),
                 'loss_train: {:.4f}'.format(loss_train.item()),
                 'f1_train: {:.4f}'.format(f1_train),
@@ -225,6 +228,7 @@ def train(epoch, task='nodecls'):
                 'loss_val: {:.4f}'.format(loss_test.item()),
                 'f1_test: {:.4f}'.format(f1_test),
                 'time: {:.4f}s'.format(time.time() - t))
+            '''
             val_performances.append(f1_val.item())
             test_performances.append(f1_test.item())
 
@@ -238,7 +242,7 @@ def train(epoch, task='nodecls'):
         loss_test = criterion(output, test_label)
         logits = torch.sigmoid(output)
         auc_test = roc_auc_score(test_label.cpu().numpy(), logits.detach().cpu().numpy())
-
+        '''
         print('Epoch: {:04d}'.format(epoch+1),
             'loss_train: {:.4f}'.format(loss_train.item()),
             'auc_train: {:.4f}'.format(auc_train),
@@ -247,7 +251,7 @@ def train(epoch, task='nodecls'):
             'loss_test: {:.4f}'.format(loss_test.item()),
             'auc_test: {:.4f}'.format(auc_test),
             'time: {:.4f}s'.format(time.time() - t))
-
+        '''
         val_performances.append(auc_val)
         test_performances.append(auc_test)
 
@@ -259,9 +263,11 @@ def test(task='nodecls'):
         output = model(features, adj)
         loss_test = F.nll_loss(output[idx_test], labels[idx_test])
         acc_test = accuracy(output[idx_test], labels[idx_test])
+        '''
         print("Test set results:",
             "loss= {:.4f}".format(loss_test.item()),
             "accuracy= {:.4f}".format(acc_test.item()))
+        '''
     elif task == 'linkpred':
         model.eval()
         with torch.no_grad():
@@ -269,16 +275,18 @@ def test(task='nodecls'):
             loss_test = criterion(output, test_label)
             logits = torch.sigmoid(output)
         auc_test = roc_auc_score(test_label.cpu().numpy(), logits.detach().cpu().numpy())
+        '''
         print("Test set results:",
             "loss= {:.4f}".format(loss_test.item()),
             "auc score= {:.4f}".format(auc_test))
-
+        '''
 def output_best(val_performances, test_performances, task='nodecls'):
     val_performances = np.array(val_performances)
     max_id = np.argmax(val_performances)
     if task == 'linkpred':
         print("Test set results (with best validation performance):",
             "auc score= {:.4f}".format(test_performances[max_id]))
+        pass
     else:
         if args.dataset != 'ppi':
             print("Test set results (with best validation performance):",
@@ -294,10 +302,12 @@ def output_best(val_performances, test_performances, task='nodecls'):
 t_total = time.time()
 for epoch in range(args.epochs):
     train(epoch, args.task)
-print("Optimization Finished!")
-print("Total time elapsed: {:.4f}s".format(time.time() - t_total))
+#print("Optimization Finished!")
+#print("Total time elapsed: {:.4f}s".format(time.time() - t_total))
 
 # Testing
 #test(args.task)
+print('dataset:',args.dataset,' --- task:',args.task,' --- self_loop:',args.self_loop,' --- layer_num:',args.layer_num,' --- pair_norm:',args.pair_norm,' --- activate:',args.activate,' --- hidden:',args.hidden)
 
-output_best(val_performances, test_performances)
+output_best(val_performances, test_performances,args.task)
+print('-----------------------------------------')
