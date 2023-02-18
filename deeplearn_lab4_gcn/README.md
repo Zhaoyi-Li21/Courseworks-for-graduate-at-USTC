@@ -1,6 +1,6 @@
-#### HandMade implementation of Graph Convolutional Neural Networks
+## HandMade implementation of Graph Convolutional Neural Networks
 This repo contains my implementation of GCN based on PyTorch (the framework is adpated from https://github.com/tkipf/pygcn),
-I make it support different datasets (cora, citeseer and ppi), different tasks (node classification and link prediction) and any other hyperparameters (e.g., layer_num, pair_norm, self_loop, activate, hidden, ...).
+and besides I make it support different datasets (cora, citeseer and ppi), different tasks (node classification and link prediction) and any other hyperparameters (e.g., layer_num, pair_norm, self_loop, activate, hidden, ...).
 ```
 support for the following parameters:
 --dataset : "cora", "citeseer" and "ppi"
