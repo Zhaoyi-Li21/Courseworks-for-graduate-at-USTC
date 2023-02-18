@@ -103,3 +103,8 @@ Uploading graph...
 dataset: ppi  --- task: nodecls  --- self_loop: True  --- layer_num: 4  --- pair_norm: True  --- activate: relu  --- hidden: 16
 Test set results (with best validation performance): f1_score = 0.4402
 -----------------------------------------
+True
+Uploading graph...
+dataset: ppi  --- task: nodecls  --- self_loop: True  --- layer_num: 4  --- pair_norm: True  --- activate: relu  --- hidden: 256
+Test set results (with best validation performance): f1_score = 0.4512
+-----------------------------------------

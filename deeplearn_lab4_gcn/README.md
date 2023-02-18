@@ -1,3 +1,17 @@
+#### HandMade implementation of Graph Convolutional Neural Networks
+This repo contains my implementation of GCN based on PyTorch (the framework is adpated from https://github.com/tkipf/pygcn),
+I make it support different datasets (cora, citeseer and ppi), different tasks (node classification and link prediction) and any other hyperparameters (e.g., layer_num, pair_norm, self_loop, activate, hidden, ...).
+```
+support for the following parameters:
+--dataset : "cora", "citeseer" and "ppi"
+--task : "nodecls" (Node Classification) and "linkpred" (Link Prediction)
+--layer_num : 2, 3, 4, 5 ,... (how many gcn layers to be used to construct model)
+--pair_norm : True, False (whether to use pair norm or not)
+--drop_edge : True, False (whether to use DropEdge method when training)
+--self_loop : True, False (whether to add self loop to ADJ matrix)
+--activate : "relu", "sigmoid" and "tanh"
+--hidden : 16, 64, 256 (dimension of hidden vector in GCN)
+```
 #### Download and Preprocess datasets
 Cora dataset : https://linqs-data.soe.ucsc.edu/public/lbc/cora.tgz \\
 Citeseer dataset :  https://linqs-data.soe.ucsc.edu/public/lbc/citeseer.tgz\\
