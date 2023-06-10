@@ -5,3 +5,6 @@ deeplearn_lab2_rnn_sentcls/.vector_cache/
 deeplearn_lab4_gcn/datasets/
 deeplearn_lab4_gcn/pygcn-master/
 deeplearn_lab4_gcn/pygcn-master.zip
+natural_language_understanding/machine_translation/transformer/results
+natural_language_understanding/machine_translation/transformer/data
+natural_language_understanding/machine_translation/lstm
